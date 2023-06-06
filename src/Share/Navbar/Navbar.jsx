@@ -17,7 +17,7 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {navItem}
-        
+
                         </ul>
                     </div>
                     <img src={logo} className='rounded-full' style={{ height: '50px' }} alt="" />
@@ -29,7 +29,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to="/login"><button className='btn btn-primary'>Login</button></Link>
                 </div>
             </div>
 
