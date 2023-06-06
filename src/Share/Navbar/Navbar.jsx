@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../src/assets/logo.avif'
 
 const Navbar = () => {
     const navItem = <>
@@ -16,10 +17,11 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {navItem}
-
+        
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Summer Camp</a>
+                    <img src={logo} className='rounded-full' style={{ height: '50px' }} alt="" />
+                    <a className="btn btn-ghost normal-case text-xl">Martial Art</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
