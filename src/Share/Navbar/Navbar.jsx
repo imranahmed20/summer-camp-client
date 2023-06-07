@@ -14,6 +14,7 @@ const Navbar = () => {
     }
     const navItem = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/dashboard">Dash Board</Link></li>
         <li><a>Item 3</a></li>
     </>
     return (

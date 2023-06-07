@@ -1,11 +1,19 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import loginImage from '../../../src/assets/login.avif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { login } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/';
+
     const handleLogin = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -16,6 +24,14 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate(from, { replace: true })
             })
             .catch(error => console.log(error))
 
@@ -53,6 +69,8 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                             <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
+
+                            <button className="btn btn-outline btn-success btn-wide mt-10"><FaGoogle></FaGoogle> Google Login</button>
                         </form>
                     </div>
                 </div>

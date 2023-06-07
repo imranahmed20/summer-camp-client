@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import loginImage from '../../../src/assets/login.avif'
 import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext)
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const onSubmit = data => {
         console.log(data)
@@ -15,6 +16,19 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                        console.log('User profile info update')
+                        reset();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'User Register Successful',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    })
+                    .catch(error => console.log(error))
             })
             .catch(error => console.log(error))
 

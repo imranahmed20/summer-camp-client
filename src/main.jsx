@@ -12,6 +12,8 @@ import Error from './Page/Error/Error';
 import Login from './Page/Login/Login';
 import Register from './Page/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
+import DashBoard from './Page/DashBoard/DashBoard';
+import PrivetRoute from './Route/PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/dashboard',
+        element: <PrivetRoute><DashBoard></DashBoard></PrivetRoute>
+
       },
       {
         path: '/login',
