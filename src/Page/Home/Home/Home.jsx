@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
@@ -7,7 +8,8 @@ const Home = () => {
             <Helmet>
                 <title>Martial Art | Home</title>
             </Helmet>
-            <h1>This is home</h1>
+
+            <Banner></Banner>
         </div>
     );
 };

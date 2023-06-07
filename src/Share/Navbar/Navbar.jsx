@@ -21,7 +21,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img src={logo} className='rounded-full' style={{ height: '50px' }} alt="" />
-                    <a className="btn btn-ghost normal-case text-xl">Martial Art</a>
+
+                    <Link> Martial Art</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -1,16 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import loginImage from '../../../src/assets/login.avif'
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import loginImage from '../../../src/assets/login.avif'
 
-const Login = () => {
-    const handleLogin = () => {
-
+const Register = () => {
+    const handleRegister = () => {
+        console.log('Hello')
     }
     return (
         <div>
             <Helmet>
-                <title>Martial Art | Login</title>
+                <title>Martial Art | Register</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -18,7 +18,7 @@ const Login = () => {
                         <img className='rounded-lg' src={loginImage} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogin} className="card-body">
+                        <form onSubmit={handleRegister} className="card-body">
                             <h1 className='text-center text-4xl mb-10 text-red-600 font-bold'>Login</h1>
                             <div className="form-control">
                                 <label className="label">
@@ -38,7 +38,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                            <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
+                            <p>Already have an account <Link className='btn-link' to='/login'>Login</Link></p>
                         </form>
                     </div>
                 </div>
@@ -47,4 +47,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
