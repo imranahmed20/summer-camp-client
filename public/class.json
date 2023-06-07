@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "1",
+        "image": "class1.jpg",
+        "name": "Yoga",
+        "instructor": "John Smith",
+        "price": 10,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 15
+    },
+    {
+        "_id": "2",
+        "image": "class2.jpg",
+        "name": "Zumba",
+        "instructor": "Jane Doe",
+        "price": 8,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 20
+    },
+    {
+        "_id": "3",
+        "image": "class3.jpg",
+        "name": "CrossFit",
+        "instructor": "Mike Johnson",
+        "price": 12,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 10
+    },
+    {
+        "_id": "4",
+        "image": "class4.jpg",
+        "name": "Pilates",
+        "instructor": "Sarah Thompson",
+        "price": 15,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 12
+    },
+    {
+        "_id": "5",
+        "image": "class5.jpg",
+        "name": "Kickboxing",
+        "instructor": "David Wilson",
+        "price": 10,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 8
+    },
+    {
+        "_id": "6",
+        "image": "class6.jpg",
+        "name": "Cycling",
+        "instructor": "Emily Brown",
+        "price": 8,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "badminton ",
+        "availableSeats": 18
+    },
+    {
+        "_id": "7",
+        "image": "class6.jpg",
+        "name": "Cycling",
+        "instructor": "Emily Brown",
+        "price": 8,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "volleyball",
+        "availableSeats": 18
+    },
+    {
+        "_id": "8",
+        "image": "class6.jpg",
+        "name": "Cycling",
+        "instructor": "Emily Brown",
+        "price": 8,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "cricket",
+        "availableSeats": 18
+    },
+    {
+        "_id": "9",
+        "image": "class6.jpg",
+        "name": "Cycling",
+        "instructor": "Emily Brown",
+        "price": 8,
+        "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
+        "category": "football",
+        "availableSeats": 18
+    }
+]
