@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../src/assets/logo.avif'
+import { AuthContext } from '../../Provider/AuthProvider';
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
     const navItem = <>
         <li><Link to="/">Home</Link></li>
         <li><a>Item 3</a></li>
@@ -22,7 +31,7 @@ const Navbar = () => {
                     </div>
                     <img src={logo} className='rounded-full' style={{ height: '50px' }} alt="" />
 
-                    <Link> Martial Art</Link>
+                    <Link to='/' className='btn btn-ghost normal-case text-xl'> Martial Art</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -30,7 +39,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login"><button className='btn btn-primary'>Login</button></Link>
+                    {
+                        user ? <>{user?.email}</> :
+                            <>
+                                <FaUser></FaUser>
+                            </>
+                    }
+                    {
+                        user ? <><button onClick={handleLogOut} className='btn btn-primary ml-6'>LogOut</button></> :
+                            <> <Link to="/login"><button className='btn btn-primary ml-6'>Login</button></Link></>
+                    }
+
                 </div>
             </div>
 
