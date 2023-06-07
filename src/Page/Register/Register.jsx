@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import loginImage from '../../../src/assets/login.avif'
 import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
@@ -9,21 +9,23 @@ import Swal from 'sweetalert2';
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser)
+                const user = result.user;
+                console.log(user)
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         console.log('User profile info update')
+                        navigate('/login')
                         reset();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'User Register Successful',
+                            title: 'User Register Successful, Please Login',
                             showConfirmButton: false,
                             timer: 1500
                         })

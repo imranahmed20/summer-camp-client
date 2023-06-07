@@ -32,7 +32,7 @@ const Navbar = () => {
                     </div>
                     <img src={logo} className='rounded-full' style={{ height: '50px' }} alt="" />
 
-                    <Link to='/' className='btn btn-ghost normal-case text-xl'> Martial Art</Link>
+                    <Link to='/' className='btn btn-ghost  text-xl uppercase'> Sports Academies</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -41,9 +41,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <>{user?.email}</> :
+                        user ? <><img className='rounded-full' title={user.displayName} style={{ height: '40px' }} src={user?.photoURL} alt="" /></> :
                             <>
-                                <FaUser></FaUser>
+                                <FaUser style={{ height: '40px' }}></FaUser>
                             </>
                     }
                     {
