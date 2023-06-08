@@ -14,12 +14,13 @@ const Navbar = () => {
     }
     const navItem = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/dashboard">Dash Board</Link></li>
-        <li><a>Item 3</a></li>
     </>
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar fixed z-10 bg-opacity-60 max-w-screen-xl bg-slate-800 text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

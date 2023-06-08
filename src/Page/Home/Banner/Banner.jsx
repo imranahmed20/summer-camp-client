@@ -10,7 +10,7 @@ const Banner = () => {
     return (
         <>
             <Carousel>
-                <div className='grid md:grid-cols-2 gap-5'>
+                <div className='grid md:grid-cols-2 gap-5 mt-20'>
                     <img className='rounded-lg' src={banner1} />
                     <div>
                         <h1 className='text-6xl font-bold text-red-600 mt-5'>Welcome To Our

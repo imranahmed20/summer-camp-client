@@ -14,6 +14,8 @@ import Register from './Page/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
 import DashBoard from './Page/DashBoard/DashBoard';
 import PrivetRoute from './Route/PrivetRoute';
+import Classes from './Page/Classes/Classes';
+import Instructors from './Page/Instructors/Instructors ';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,15 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <PrivetRoute><DashBoard></DashBoard></PrivetRoute>
+
+      },
+      {
+        path: '/classes',
+        element: <Classes></Classes>
+      },
+      {
+        path: '/instructors',
+        element: <Instructors></Instructors>
 
       },
       {

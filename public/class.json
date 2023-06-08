@@ -1,7 +1,7 @@
 [
     {
         "_id": "1",
-        "image": "class1.jpg",
+        "image": "https://t4.ftcdn.net/jpg/01/21/16/65/240_F_121166552_8OhRtCSmjbEzX6qMkK8jVecSGcvQe0Sc.jpg",
         "name": "Yoga",
         "instructor": "John Smith",
         "price": 10,

@@ -92,7 +92,7 @@ const Login = () => {
                             </div>
                             <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
 
-                            <button onClick={handleGoogleLogin} className="btn btn-outline btn-success btn-wide mt-10"><FaGoogle></FaGoogle> Google Login</button>
+                            <button onClick={handleGoogleLogin} className="btn btn-outline btn-success  w-full mt-10"><FaGoogle></FaGoogle> Google Login</button>
                         </form>
                     </div>
                 </div>
