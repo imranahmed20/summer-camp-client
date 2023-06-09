@@ -4,34 +4,34 @@
         "image": "https://t4.ftcdn.net/jpg/01/21/16/65/240_F_121166552_8OhRtCSmjbEzX6qMkK8jVecSGcvQe0Sc.jpg",
         "name": "Yoga",
         "instructor": "John Smith",
-        "price": 10,
+        "price": 105,
         "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
         "category": "cricket",
         "availableSeats": 15
     },
     {
         "_id": "2",
-        "image": "class2.jpg",
+        "image": "https://t4.ftcdn.net/jpg/05/61/37/07/240_F_561370785_TbBSZEt4Z7H02HFXtTKGaILQvtyuhvG5.jpg",
         "name": "Zumba",
         "instructor": "Jane Doe",
-        "price": 8,
+        "price": 120,
         "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
         "category": "cricket",
         "availableSeats": 20
     },
     {
         "_id": "3",
-        "image": "class3.jpg",
+        "image": "https://t4.ftcdn.net/jpg/06/03/35/05/240_F_603350557_a64JYZXXJH8HBJB3VbJomNWoBNZOGYow.jpg",
         "name": "CrossFit",
         "instructor": "Mike Johnson",
-        "price": 12,
+        "price": 121,
         "detail": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée and tomato and chive vinaigrette",
         "category": "cricket",
         "availableSeats": 10
     },
     {
         "_id": "4",
-        "image": "class4.jpg",
+        "image": "https://t3.ftcdn.net/jpg/05/60/78/20/240_F_560782058_uhkKDu1jZ8Yvbi7vmkP4bU61r9QWD5w5.jpg",
         "name": "Pilates",
         "instructor": "Sarah Thompson",
         "price": 15,
@@ -41,7 +41,7 @@
     },
     {
         "_id": "5",
-        "image": "class5.jpg",
+        "image": "https://t4.ftcdn.net/jpg/05/35/85/27/240_F_535852753_ryWfcX4bLldRg0Kow3W4DFKAOgpzL81D.jpg",
         "name": "Kickboxing",
         "instructor": "David Wilson",
         "price": 10,
@@ -51,7 +51,7 @@
     },
     {
         "_id": "6",
-        "image": "class6.jpg",
+        "image": "https://t4.ftcdn.net/jpg/05/99/24/45/240_F_599244529_C6CLAOOi7YiXkG6kMmp4psWeP6leYXTx.jpg",
         "name": "Cycling",
         "instructor": "Emily Brown",
         "price": 8,
@@ -61,7 +61,7 @@
     },
     {
         "_id": "7",
-        "image": "class6.jpg",
+        "image": "https://t4.ftcdn.net/jpg/05/59/86/39/240_F_559863977_mnPA9KztCbkGcTWSUyd0OiBU6IMIkXN7.jpg",
         "name": "Cycling",
         "instructor": "Emily Brown",
         "price": 8,
@@ -71,7 +71,7 @@
     },
     {
         "_id": "8",
-        "image": "class6.jpg",
+        "image": "https://t3.ftcdn.net/jpg/02/51/78/72/240_F_251787228_9H4m2zYU5kNATRmQfP6qu9WW9yxhpa5o.jpg",
         "name": "Cycling",
         "instructor": "Emily Brown",
         "price": 8,
@@ -81,7 +81,7 @@
     },
     {
         "_id": "9",
-        "image": "class6.jpg",
+        "image": "https://t4.ftcdn.net/jpg/01/20/06/47/240_F_120064739_sAPkdrQk5f1OPx8HbvDToi0hHHV8Un8D.jpg",
         "name": "Cycling",
         "instructor": "Emily Brown",
         "price": 8,

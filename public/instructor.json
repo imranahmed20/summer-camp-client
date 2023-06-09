@@ -2,6 +2,7 @@
     {
         "_id": 1,
         "name": "John Doe",
+        "image": "John Doe",
         "email": "johndoe@example.com",
         "numberOfClass": 3,
         "category": "footboll",
@@ -15,6 +16,7 @@
     {
         "_id": 2,
         "name": "Jane Smith",
+        "image": "John Doe",
         "email": "janesmith@example.com",
         "numberOfClass": 2,
         "category": "footboll",
@@ -27,6 +29,7 @@
     {
         "_id": 3,
         "name": "Alice Johnson",
+        "image": "John Doe",
         "email": "alicejohnson@example.com",
         "numberOfClass": 4,
         "category": "footboll",
@@ -41,6 +44,7 @@
     {
         "_id": 4,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "cricket",
@@ -52,6 +56,7 @@
     {
         "_id": 5,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "footboll",
@@ -63,6 +68,7 @@
     {
         "_id": 6,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "cricket",
@@ -74,6 +80,7 @@
     {
         "_id": 7,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "footboll",
@@ -85,6 +92,7 @@
     {
         "_id": 8,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "cricket",
@@ -96,6 +104,7 @@
     {
         "_id": 9,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "footboll",
@@ -107,6 +116,7 @@
     {
         "_id": 10,
         "name": "Bob Anderson",
+        "image": "John Doe",
         "email": "bobanderson@example.com",
         "numberOfClass": 1,
         "category": "cricket",
