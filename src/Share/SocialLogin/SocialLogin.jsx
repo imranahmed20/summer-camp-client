@@ -3,6 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { saveUser } from '../../Hooks/auth.js/auth';
 
 const SocialLogin = () => {
     const { googleSignIn } = useContext(AuthContext)
@@ -16,6 +17,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
+                saveUser(result.user)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -30,9 +32,9 @@ const SocialLogin = () => {
     }
 
     return (
-        <div className='mb-10'>
-            <div className="divider"></div>
-            <button onClick={handleGoogleLogin} className="btn btn-outline btn-success  w-full mt-10"><FaGoogle></FaGoogle> Google Login</button>
+        <div className='mb-8'>
+            <div className="divider "></div>
+            <button onClick={handleGoogleLogin} className="btn btn-outline btn-success  w-full mt-5"><FaGoogle></FaGoogle> Google Login</button>
         </div>
     );
 };

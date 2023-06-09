@@ -9,7 +9,6 @@ const ClassInfo = ({ item }) => {
     const navigate = useNavigate()
 
     const handleAddClass = item => {
-        console.log(item)
         if (user && user?.email) {
             const bookingClass = { classId: _id, name, image, email: user?.email, price }
             fetch('http://localhost:5000/classes', {
