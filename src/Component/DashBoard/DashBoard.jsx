@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 
 const DashBoard = () => {
@@ -15,9 +16,9 @@ const DashBoard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-                    <li><Link to='/'>Home</Link></li>
+                    <li> <Link to='/'> <FaHome></FaHome>Home</Link></li>
                     <li><Link to='/dashboard/addClass'>Add  Class</Link></li>
-                    <li><Link to='/dashboard/addClass'>My Class</Link></li>
+                    <li><Link to='/dashboard/myCart'>My Class</Link></li>
 
                 </ul>
 

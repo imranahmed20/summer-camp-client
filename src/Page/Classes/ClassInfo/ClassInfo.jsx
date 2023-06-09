@@ -7,7 +7,7 @@ const ClassInfo = ({ item }) => {
     const { user } = useContext(AuthContext)
     const { _id, name, image, price, availableSeats, instructor } = item;
     const navigate = useNavigate()
-    
+
     const handleAddClass = item => {
         console.log(item)
         if (user && user?.email) {
@@ -51,7 +51,7 @@ const ClassInfo = ({ item }) => {
         }
     }
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact md:w-96 w-full bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Instructor Name: {instructor}</h2>

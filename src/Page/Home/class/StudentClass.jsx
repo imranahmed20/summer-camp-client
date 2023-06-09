@@ -3,7 +3,7 @@ import React from 'react';
 const StudentClass = ({ item }) => {
     const { name, image, price, availableSeats, instructor } = item;
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">A
+        <div className="card card-compact md:w-96 w-full bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Instructor Name: {instructor}</h2>

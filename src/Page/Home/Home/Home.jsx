@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Martial Art | Home</title>
+                <title>Sports Academies | Home</title>
             </Helmet>
             <Banner></Banner>
             <PopularClass></PopularClass>

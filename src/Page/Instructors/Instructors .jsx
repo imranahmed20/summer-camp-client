@@ -5,7 +5,7 @@ import Cover from './cover/Cover';
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
     useEffect(() => {
-        fetch('instructor.json')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data)

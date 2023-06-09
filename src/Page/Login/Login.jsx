@@ -4,13 +4,13 @@ import loginImage from '../../../src/assets/login.avif'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
-import { FaGoogle } from 'react-icons/fa';
 import { saveUser } from '../../Hooks/auth.js/auth';
+import SocialLogin from '../../Share/SocialLogin/SocialLogin';
 
 
 
 const Login = () => {
-    const { signIn, googleSignIn } = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -26,27 +26,8 @@ const Login = () => {
         console.log(email, password)
         signIn(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user)
-                navigate(from, { replace: true })
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'User Login Successful',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-
-            })
-            .catch(error => console.log(error))
-
-    }
-
-    const handleGoogleLogin = () => {
-        googleSignIn()
-            .then(result => {
-                const user = result.user
-                console.log(user)
+                const loggedUser = result.user;
+                console.log(loggedUser)
                 saveUser(result.user)
                 navigate(from, { replace: true })
                 Swal.fire({
@@ -57,7 +38,6 @@ const Login = () => {
                     timer: 1500
                 })
 
-
             })
             .catch(error => console.log(error))
 
@@ -67,7 +47,7 @@ const Login = () => {
     return (
         <div>
             <Helmet>
-                <title>Martial Art | Login</title>
+                <title>Sports Academies | Login</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -96,10 +76,9 @@ const Login = () => {
                                 {/* <button >Login</button> */}
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
-                            <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
-
-                            <button onClick={handleGoogleLogin} className="btn btn-outline btn-success  w-full mt-10"><FaGoogle></FaGoogle> Google Login</button>
                         </form>
+                        <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

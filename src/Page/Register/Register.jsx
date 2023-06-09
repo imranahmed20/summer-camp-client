@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { saveUser } from '../../Hooks/auth.js/auth';
+import SocialLogin from '../../Share/SocialLogin/SocialLogin';
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -13,15 +14,17 @@ const Register = () => {
     const navigate = useNavigate()
 
     const onSubmit = data => {
-        console.log(data)
+
         createUser(data.email, data.password)
             .then(result => {
-                const user = result.user;
-                console.log(user)
+
+                const loggedUser = result.user;
+                console.log(loggedUser)
+
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         saveUser(result.user)
-                        navigate('/login')
+                        navigate('/')
                         reset();
                         Swal.fire({
                             position: 'top-end',
@@ -30,6 +33,7 @@ const Register = () => {
                             showConfirmButton: false,
                             timer: 1500
                         })
+
                     })
                     .catch(error => console.log(error))
             })
@@ -40,7 +44,7 @@ const Register = () => {
     return (
         <div>
             <Helmet>
-                <title>Martial Art | Register</title>
+                <title>Sports Academies | Register</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -93,8 +97,9 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Register" />
                             </div>
-                            <p>Already have an account <Link className='btn-link' to='/login'>Login</Link></p>
                         </form>
+                        <p>Already have an account <Link className='btn-link' to='/login'>Login</Link></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
