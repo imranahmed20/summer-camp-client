@@ -54,7 +54,7 @@ const Login = () => {
                     <div className="text-center lg:text-left ml-8">
                         <img className='rounded-lg' src={loginImage} alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-20">
                         <form onSubmit={handleLogin} className="card-body">
                             <h1 className='text-center text-4xl mb-10 text-red-600 font-bold'>Login</h1>
                             <div className="form-control">
@@ -68,9 +68,6 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 {/* <button >Login</button> */}

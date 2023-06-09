@@ -11,7 +11,6 @@ const Navbar = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error))
-        console.log('Hello')
     }
     const navItem = <>
         <li><Link to="/">Home</Link></li>
@@ -48,10 +47,16 @@ const Navbar = () => {
                                 <FaUser style={{ height: '40px' }}></FaUser>
                             </>
                     }
-                    {
-                        user ? <><button onClick={handleLogOut} className='btn btn-primary ml-6'>LogOut</button></> :
-                            <> <Link to="/login"><button className='btn btn-primary ml-6'>Login</button></Link></>
-                    }
+                    {/* {
+                        user 
+                            // <button onClick={handleLogOut} className='btn btn-primary ml-6'>LogOut</button>
+
+                            // :
+
+                           
+
+                    } */}
+                    <Link to="/login"><button className='btn btn-primary ml-6'>Login</button></Link>
 
                 </div>
             </div>
