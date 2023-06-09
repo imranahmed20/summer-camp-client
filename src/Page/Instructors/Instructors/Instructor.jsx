@@ -10,7 +10,7 @@ const Instructor = ({ item }) => {
                 <h2 className="card-title">Email: {email}</h2>
                 <h2 className="card-title">Available Seats: {numberOfClass}</h2>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary w-full mt-5">Buy Now</button>
+                    <button className="btn btn-primary w-full mt-5">See classes</button>
                 </div>
             </div>
         </div>

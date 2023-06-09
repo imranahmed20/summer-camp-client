@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 const ClassInfo = ({ item }) => {
     const { user } = useContext(AuthContext)
-    const { name, image, price, availableSeats, instructor } = item;
+    const { _id, name, image, price, availableSeats, instructor } = item;
     const navigate = useNavigate()
+    
     const handleAddClass = item => {
         console.log(item)
-        if (user && user.email) {
-            const bookingClass = { classId: _id, name, image, email: user.email }
+        if (user && user?.email) {
+            const bookingClass = { classId: _id, name, image, email: user?.email }
             fetch('http://localhost:5000/classes', {
                 method: 'POST',
                 headers: {
@@ -58,7 +59,7 @@ const ClassInfo = ({ item }) => {
                 <h2 className="card-title">Price: ${price}</h2>
                 <h2 className="card-title">Available Seats: {availableSeats}</h2>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleAddClass(item)} className="btn btn-primary w-full mt-5">Buy Now</button>
+                    <button onClick={() => handleAddClass(item)} className="btn btn-primary w-full mt-5">Select Class</button>
                 </div>
             </div>
         </div>

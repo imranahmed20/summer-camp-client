@@ -1,12 +1,12 @@
 import React from 'react';
-import useData from '../../Hooks/useData';
+
 import ClassCover from './ClassCover/ClassCover';
 import ClassInfo from './ClassInfo/ClassInfo';
+import useData from '../../Hooks/data/useData';
 
 
 const Classes = () => {
     const [items] = useData()
-    console.log(items)
     return (
         <div>
             <ClassCover></ClassCover>

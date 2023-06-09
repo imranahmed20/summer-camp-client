@@ -4,7 +4,6 @@ import Cover from './cover/Cover';
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
-
     useEffect(() => {
         fetch('instructor.json')
             .then(res => res.json())

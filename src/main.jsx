@@ -17,6 +17,13 @@ import Classes from './Page/Classes/Classes';
 import Instructors from './Page/Instructors/Instructors ';
 import DashBoard from './Component/DashBoard/DashBoard';
 import AddClass from './Component/AddClass/AddClass';
+import {
+  QueryClient,
+  QueryClientProvider
+
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -52,7 +59,7 @@ const router = createBrowserRouter([
     element: <DashBoard></DashBoard>,
     children: [
       {
-        path: 'addClass',
+        path: '/dashboard/addClass',
         element: <AddClass></AddClass>
       }
     ]
@@ -63,9 +70,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <HelmetProvider>
-        <div className='mx-auto max-w-screen-xl'>
-          <RouterProvider router={router}></RouterProvider>
-        </div>
+        <QueryClientProvider client={queryClient}>
+          <div className='mx-auto max-w-screen-xl'>
+            <RouterProvider router={router}></RouterProvider>
+          </div>
+        </QueryClientProvider>
       </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,

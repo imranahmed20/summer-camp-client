@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Banner from '../Banner/Banner';
-import PopularClass from '../popularClass/popularClass';
 import PopularInstructor from './PopularInstructor/PopularInstructor';
 import OtherSection from './OtherSecton/OtherSection';
+import PopularClass from './PopularInstructor/PopularClass';
 
 
 
