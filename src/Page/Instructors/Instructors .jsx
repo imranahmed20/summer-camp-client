@@ -1,17 +1,23 @@
-import React from 'react';
-import useData from '../../Hooks/useData';
+import React, { useEffect, useState } from 'react';
 import Instructor from './Instructors/Instructor';
 import Cover from './cover/Cover';
 
 const Instructors = () => {
-    const [items] = useData()
-    console.log(items)
+    const [instructors, setInstructors] = useState([])
+
+    useEffect(() => {
+        fetch('instructor.json')
+            .then(res => res.json())
+            .then(data => {
+                setInstructors(data)
+            })
+    }, [])
     return (
         <div>
             <Cover></Cover>
-            <div className='grid md:grid-cols-3 gap-6'>
+            <div className='grid md:grid-cols-3 gap-6 mt-8'>
                 {
-                    items.map(item => <Instructor item={item} key={item._id}></Instructor>)
+                    instructors.map(item => <Instructor item={item} key={item._id}></Instructor>)
                 }
 
             </div>
