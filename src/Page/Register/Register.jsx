@@ -5,6 +5,7 @@ import loginImage from '../../../src/assets/login.avif'
 import { AuthContext } from '../../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { saveUser } from '../../Hooks/auth.js/auth';
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -19,7 +20,7 @@ const Register = () => {
                 console.log(user)
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
-                        console.log('User profile info update')
+                        saveUser(result.user)
                         navigate('/login')
                         reset();
                         Swal.fire({

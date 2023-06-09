@@ -12,10 +12,11 @@ import Error from './Page/Error/Error';
 import Login from './Page/Login/Login';
 import Register from './Page/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
-import DashBoard from './Page/DashBoard/DashBoard';
 import PrivetRoute from './Route/PrivetRoute';
 import Classes from './Page/Classes/Classes';
 import Instructors from './Page/Instructors/Instructors ';
+import DashBoard from './Component/DashBoard/DashBoard';
+import AddClass from './Component/AddClass/AddClass';
 
 const router = createBrowserRouter([
   {
@@ -26,11 +27,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
-      },
-      {
-        path: '/dashboard',
-        element: <PrivetRoute><DashBoard></DashBoard></PrivetRoute>
-
       },
       {
         path: '/classes',
@@ -51,6 +47,16 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '/dashboard',
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        path: 'addClass',
+        element: <AddClass></AddClass>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

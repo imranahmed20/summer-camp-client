@@ -10,7 +10,7 @@ const PopularClass = () => {
             <h1 className='text-center text-5xl font-bold uppercase mt-20'>Popular Class</h1>
             <p className='text-xl text-center mt-4'>A group of people sharing the same social, economic, or occupational status. The term class usually implies a social and economic hierarchy, in which those of higher class standing have greater status, privilege, prestige, and authority.</p>
 
-            <div className='grid md:grid-cols-3 mt-10  gap-6'>
+            <div className='grid md:grid-cols-3 mt-10   gap-6'>
                 {
                     cricket.map(item => <Class key={item._id} item={item}></Class>)
                 }

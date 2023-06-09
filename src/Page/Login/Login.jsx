@@ -1,46 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import loginImage from '../../../src/assets/login.avif'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import app from '../../Firebase/Firebase';
+import { saveUser } from '../../Hooks/auth.js/auth';
 
 
-const auth = getAuth(app)
+
 const Login = () => {
-    const { login } = useContext(AuthContext)
-
-    const provider = new GoogleAuthProvider()
-
-
+    const { signIn, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
 
-    const handleGoogleLogin = () => {
-        signInWithPopup(auth, provider)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-                navigate(from)
-            })
-            .catch(error => console.log(error.message))
 
-    }
 
     const handleLogin = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        login(email, password)
+        console.log(email, password)
+        signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true })
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -48,13 +36,30 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
+
+            })
+            .catch(error => console.log(error))
+
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                saveUser(result.user)
                 navigate(from, { replace: true })
-            })
-            .catch(error => {
-                console.log(error)
-            })
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
 
 
+            })
+            .catch(error => console.log(error))
 
     }
 
@@ -88,7 +93,8 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                {/* <button >Login</button> */}
+                                <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <p>New to website <Link className='btn-link' to='/register'>Register</Link></p>
 

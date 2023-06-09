@@ -1,0 +1,118 @@
+[
+    {
+        "_id": 1,
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "numberOfClass": 3,
+        "category": "footboll",
+        "allClass": [
+            "Math",
+            "Science",
+            "History"
+        ],
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "_id": 2,
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "numberOfClass": 2,
+        "category": "footboll",
+        "allClass": [
+            "English",
+            "Physics"
+        ],
+        "detail": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+    },
+    {
+        "_id": 3,
+        "name": "Alice Johnson",
+        "email": "alicejohnson@example.com",
+        "numberOfClass": 4,
+        "category": "footboll",
+        "allClass": [
+            "Chemistry",
+            "Geography",
+            "Art",
+            "Music"
+        ],
+        "detail": "Duis aute irure dolor in reprehenderit in voluptate velit."
+    },
+    {
+        "_id": 4,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "cricket",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 5,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "footboll",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 6,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "cricket",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 7,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "footboll",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 8,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "cricket",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 9,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "footboll",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "_id": 10,
+        "name": "Bob Anderson",
+        "email": "bobanderson@example.com",
+        "numberOfClass": 1,
+        "category": "cricket",
+        "allClass": [
+            "Physical Education"
+        ],
+        "detail": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+]

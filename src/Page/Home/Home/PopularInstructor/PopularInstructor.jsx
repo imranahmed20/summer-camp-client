@@ -1,10 +1,11 @@
 import React from 'react';
 import useData from '../../../../Hooks/useData';
 import Class from '../../class/Class';
+import useInstructor from '../../../../Hooks/useInstructor';
 
 const PopularInstructor = () => {
-    const [items] = useData()
-    const cricket = items.filter(item => item.category === "cricket")
+    const [instructors] = useInstructor()
+    const cricket = instructors.filter(item => item.category === "footboll")
     return (
         <div>
             <h1 className='text-center text-5xl font-bold uppercase mt-20'> Popular Instructor</h1>
