@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const img_token = import.meta.env.VITE_IMGBB_KEY;
 const AddClass = () => {
+    const { user } = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const img_token_url = `https://api.imgbb.com/1/upload?key=${img_token}`
     const onSubmit = data => {
@@ -17,7 +19,12 @@ const AddClass = () => {
         })
             .then(res => res.json())
             .then(imgResponse => {
-                console.log(imgResponse)
+                if (imgResponse.success) {
+                    const imageURL = imgResponse.data.display_url;
+                    const { name, price, category, instructor, availableSeats } = data;
+                    const newClass = { name, price: parseFloat(price), category, availableSeats, instructor, image: imageURL }
+                    console.log(newClass)
+                }
             })
 
         console.log(data)
@@ -46,7 +53,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text">Instructor name*</span>
                         </label>
-                        <input type="text" {...register("category", { required: true })} className="input input-bordered w-full max-w-xs" placeholder="Instructor name" />
+                        <input type="text" {...register("instructor", { required: true })} className="input input-bordered w-full max-w-xs" placeholder="Instructor name" />
 
                     </div>
                     <div className="form-control w-full max-w-xs">
@@ -61,14 +68,14 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text">Instructor email *</span>
                         </label>
-                        <input type="text" {...register("category", { required: true })} className="input input-bordered w-full max-w-xs" placeholder="Instructor email" />
+                        <input type="email" {...register("email", { required: true })} className="input input-bordered w-full max-w-xs" defaultValue={user.email} />
 
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Available seats*</span>
                         </label>
-                        <input {...register("price", { required: true })} type="number" placeholder="Available seats" className="input input-bordered w-full max-w-xs" />
+                        <input {...register("availableSeats", { required: true })} type="number" placeholder="Available seats" className="input input-bordered w-full max-w-xs" />
                     </div>
                 </div>
                 <div className="form-control">
