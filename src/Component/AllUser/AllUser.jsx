@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 
 const AllUser = () => {
-
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json()
@@ -25,6 +24,27 @@ const AllUser = () => {
                         position: 'top-end',
                         icon: 'success',
                         title: `${user.name} is an admin now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                }
+            })
+    }
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an instructor now`,
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -77,7 +97,14 @@ const AllUser = () => {
                                     }
                                 </td>
                                 <td>
-                                    <button className="btn btn-primary btn-sm">Make Instructor</button>
+                                    {
+                                        user.role === 'instructor' ?
+                                            <>
+                                                <button className="btn btn-primary btn-sm" disabled>Make Instructor</button>
+                                            </> :
+                                            <> <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-sm">Make Instructor</button>
+                                            </>
+                                    }
                                 </td>
                             </tr>)
                         }

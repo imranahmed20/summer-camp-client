@@ -3,7 +3,6 @@ import StudentClass from '../../class/StudentClass';
 
 const PopularClass = () => {
     const [classes, setClasses] = useState([])
-
     useEffect(() => {
         fetch('http://localhost:5000/instructor')
             .then(res => res.json())
@@ -14,7 +13,6 @@ const PopularClass = () => {
 
             })
     }, [])
-    console.log(classes)
     return (
         <div>
 

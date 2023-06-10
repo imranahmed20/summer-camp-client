@@ -1,10 +1,13 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../../Hooks/useAdmin/useAdmin';
+// import useInstructor from '../../Hooks/useInstructor';
 
 const DashBoard = () => {
+    const [isAdmin] = useAdmin()
 
-    const isAdmin = true;
+    // const [isInstructor] = useInstructor()
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -21,21 +24,19 @@ const DashBoard = () => {
 
 
                     {
-                        isAdmin ? <>
-                            <li> <Link to='/'> <FaHome></FaHome> Home</Link></li>
-                            <li><Link className='mb-5 mt-5' to='/dashboard/allUsers'>Manage Users</Link></li>
-                            <li><Link to='/dashboard/manageClass'>Manage Classes</Link></li>
+                        isAdmin ?
 
-                        </>
+                            <>
+                                <li> <Link to='/'> <FaHome></FaHome> Home</Link></li>
+                                <li><Link className='mb-5 mt-5' to='/dashboard/addClass'>Add a Class</Link></li>
+                                <li><Link to='/dashboard/addClass'>My Classes</Link></li>
+                            </>
+
                             :
                             <>
-                                {/* {
-                                    isAdmin ? <></> : <></>
-                                } */}
-                                <li> <Link to='/'> <FaHome></FaHome>Home</Link></li>
-                                <li><Link className='mb-5 mt-5' to='/dashboard/myClass'>My Selected Classes</Link></li>
-                                <li><Link to='/dashboard/addClass'>My Enrolled Classes</Link></li>
-
+                                <li> <Link to='/'> <FaHome></FaHome>User Home</Link></li>
+                                <li><Link className='mb-5 mt-5' to='/dashboard/allUsers'>Manage Users</Link></li>
+                                <li><Link to='/dashboard/manageClass'>Manage Classes</Link></li>
                             </>
                     }
 

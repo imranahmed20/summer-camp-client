@@ -25,6 +25,7 @@ import {
 import MyClass from './Component/MyClass/MyClass';
 import AllUser from './Component/AllUser/AllUser';
 import ManageClasses from './Component/ManageClass/ManageClasses';
+import AdminRoute from './Route/AminRoute';
 
 const queryClient = new QueryClient()
 
@@ -71,11 +72,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'allUsers',
-        element: <AllUser></AllUser>
+        element: <AdminRoute><AllUser></AllUser></AdminRoute>
       },
       {
         path: 'manageClass',
-        element: <ManageClasses></ManageClasses>
+        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
       }
     ]
   }
