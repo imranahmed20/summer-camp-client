@@ -17,14 +17,11 @@ const Register = () => {
 
         createUser(data.email, data.password)
             .then(result => {
-
                 const loggedUser = result.user;
                 console.log(loggedUser)
-
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         saveUser(result.user)
-                        navigate('/')
                         reset();
                         Swal.fire({
                             position: 'top-end',
@@ -33,6 +30,7 @@ const Register = () => {
                             showConfirmButton: false,
                             timer: 1500
                         })
+                        navigate('/')
 
                     })
                     .catch(error => console.log(error))

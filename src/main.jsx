@@ -23,6 +23,7 @@ import {
 
 } from '@tanstack/react-query'
 import MyClass from './Component/MyClass/MyClass';
+import AllUser from './Component/AllUser/AllUser';
 
 const queryClient = new QueryClient()
 
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: 'myCart',
         element: <MyClass></MyClass>
+      },
+      {
+        path: 'allUsers',
+        element: <AllUser></AllUser>
       }
     ]
   }
