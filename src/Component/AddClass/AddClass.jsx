@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useAxiosSecure from '../../Hooks/useAxiosSecure/useAxiosSecure';
+
 
 
 const img_token = import.meta.env.VITE_IMGBB_KEY;
 const AddClass = () => {
+    const [axiosSecure] = useAxiosSecure()
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const img_token_url = `https://api.imgbb.com/1/upload?key=${img_token}`
@@ -24,12 +27,15 @@ const AddClass = () => {
                     const { name, price, category, instructor, availableSeats } = data;
                     const newClass = { name, price: parseFloat(price), category, availableSeats, instructor, image: imageURL }
                     console.log(newClass)
+                    axiosSecure.post('/class', newClass)
+                        .then(data => {
+                            console.log("see data", data.data)
+                        })
                 }
             })
 
         console.log(data)
     };
-    // console.log(errors)
     return (
         <div className='w-full p-10'>
             <h1 className='text-4xl text-red-600 text-center mb-10 font-bold'>Add A Class</h1>

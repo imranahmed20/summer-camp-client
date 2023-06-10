@@ -11,7 +11,8 @@ const AllUser = () => {
     })
 
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000//users/admin/${user?.id}`, {
+        console.log(user)
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH'
 
         })
@@ -47,7 +48,6 @@ const AllUser = () => {
                             <th>User Image</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
                             <th>Admin</th>
                             <th>Instructor</th>
                         </tr>
@@ -65,13 +65,19 @@ const AllUser = () => {
                                 </td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td></td>
+
 
                                 <td>
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-sm">Make Admin</button>
+                                    {
+                                        user.role === "admin" ?
+                                            <button className="btn btn-secondary btn-sm " disabled>Make Admin</button>
+
+                                            :
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-sm ">Make Admin</button>
+                                    }
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDelete(book)} className="btn btn-primary btn-sm">Make Instructor</button>
+                                    <button className="btn btn-primary btn-sm">Make Instructor</button>
                                 </td>
                             </tr>)
                         }
