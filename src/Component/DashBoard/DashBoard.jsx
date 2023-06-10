@@ -24,7 +24,7 @@ const DashBoard = () => {
                         isAdmin ? <>
                             <li> <Link to='/'> <FaHome></FaHome> Home</Link></li>
                             <li><Link className='mb-5 mt-5' to='/dashboard/allUsers'>Manage Users</Link></li>
-                            <li><Link to='/dashboard/addClass'>Manage Classes</Link></li>
+                            <li><Link to='/dashboard/manageClass'>Manage Classes</Link></li>
 
                         </>
                             :
