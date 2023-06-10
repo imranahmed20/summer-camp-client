@@ -35,9 +35,9 @@ const AllUser = () => {
     return (
         <div className='w-full p-10'>
             <Helmet>
-                <title>Sports Academies | All User</title>
+                <title>Sports Academies | Manage User</title>
             </Helmet>
-            <h1>This is main: {users.length}</h1>
+            <h1 className='text-4xl text-center font-bold mb-10'>Total User: {users.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     { }

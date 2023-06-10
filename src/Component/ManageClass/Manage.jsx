@@ -11,9 +11,9 @@ const Manage = ({ item }) => {
                 <h2 className="card-title">Price: ${price}</h2>
                 <h2 className="card-title">Available Seats: {availableSeats}</h2>
                 <div className="flex justify-between">
-                    <button className="btn btn-primary mt-5">Approve</button>
-                    <button className="btn btn-primary mt-5">Deny</button>
-                    <button className="btn btn-primary mt-5">send feedback</button>
+                    <button className="btn btn-outline btn-primary mt-5">Approve</button>
+                    <button className="btn btn-outline btn-accent mt-5">Deny</button>
+                    <button className="btn btn-outline btn-secondary mt-5">send feedback</button>
                 </div>
             </div>
         </div>

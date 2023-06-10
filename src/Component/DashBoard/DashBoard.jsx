@@ -33,7 +33,7 @@ const DashBoard = () => {
                                     isAdmin ? <></> : <></>
                                 } */}
                                 <li> <Link to='/'> <FaHome></FaHome>Home</Link></li>
-                                <li><Link className='mb-5 mt-5' to='/dashboard/myCart'>My Selected Classes</Link></li>
+                                <li><Link className='mb-5 mt-5' to='/dashboard/myClass'>My Selected Classes</Link></li>
                                 <li><Link to='/dashboard/addClass'>My Enrolled Classes</Link></li>
 
                             </>

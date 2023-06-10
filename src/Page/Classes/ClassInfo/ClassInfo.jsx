@@ -23,6 +23,7 @@ const ClassInfo = ({ item }) => {
                 .then(data => {
                     console.log(data)
                     if (data.insertedId) {
+
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -30,6 +31,7 @@ const ClassInfo = ({ item }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
+                       
 
                     }
                 })

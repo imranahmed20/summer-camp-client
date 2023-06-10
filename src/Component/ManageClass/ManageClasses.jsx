@@ -6,8 +6,9 @@ const ManageClasses = () => {
     const [items] = useData()
     console.log(items)
     return (
-        <div>
-            <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-6 mt-8 mb-8'>
+        <div className='mt-10'>
+            <h1 className='text-3xl text-center font-bold'>Total Classes:  {items.length}</h1>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-6 mt-10 mb-8'>
                 {
                     items.map(item => <Manage item={item} key={item._id}></Manage>)
                 }
