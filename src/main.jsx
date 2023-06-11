@@ -26,6 +26,9 @@ import MyClass from './Component/MyClass/MyClass';
 import AllUser from './Component/AllUser/AllUser';
 import ManageClasses from './Component/ManageClass/ManageClasses';
 import AdminRoute from './Route/AminRoute';
+import InstructorDetails from './Page/Instructors/InstructorDetail/InstructorDetails';
+import MyEnrollClass from './Component/MyEnrolClass/MyEnrollClass';
+import Manage from './Component/ManageClass/Manage';
 
 const queryClient = new QueryClient()
 
@@ -55,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/class/:id',
+        element: <InstructorDetails></InstructorDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/class/${params.id}`)
       }
     ]
   },
@@ -77,6 +85,14 @@ const router = createBrowserRouter([
       {
         path: 'manageClass',
         element: <ManageClasses></ManageClasses>
+      },
+      {
+        path: 'enrollClass',
+        element: <MyEnrollClass></MyEnrollClass>
+      },
+      {
+        path: 'manage',
+        element: <Manage></Manage>
       }
     ]
   }

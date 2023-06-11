@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useNavigate } from 'react-router-dom';
 import loginImage from '../../../src/assets/login.avif'
@@ -7,10 +7,14 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { saveUser } from '../../Hooks/auth.js/auth';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
+// import { AiFillEyeInvisible, AiFillEye } from 'react-icons';
+
 
 const Register = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors }, getValues } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext)
+
+
     const navigate = useNavigate()
 
     const onSubmit = data => {
@@ -41,18 +45,18 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div className='mb-10'>
             <Helmet>
                 <title>Sports Academies | Register</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left ml-8">
-                        <img className='rounded-lg w-full h-full' src={loginImage} alt="" />
+                    <div className="ml-10">
+                        <img className='rounded-lg' style={{ height: '750px' }} src={loginImage} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-20">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <h1 className='text-center text-4xl mb-10 text-red-600 font-bold'>Create an account</h1>
+                            <h1 className='text-center text-4xl mb-5 text-red-600 font-bold'>Create an account</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -85,12 +89,17 @@ const Register = () => {
                                 {errors.password?.type === 'required' && <span className='text-red-600'>Password field is required</span>}
                                 {errors.password?.type === 'minLength' && <span className='text-red-600'>Password must be 6 characters</span>}
                                 {errors.password?.type === 'pattern' && <span className='text-red-600'>Password must have one uppercase , one lower case, one special characters</span>}
+                                <div className='text-2xl'>
+                                    {/* <AiFillEyeInvisible />
+                                    <AiFillEye></AiFillEye> */}
+
+                                </div>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" {...register("confirm", { required: true })} placeholder="Confirm Password" className="input input-bordered" />
+                                <input type="password" placeholder="Confirm Password" className="input input-bordered" />
                                 {errors.confirm && <span className='text-red-600'>Confirm Password field is required</span>}
                             </div>
                             <div className="form-control mt-6">

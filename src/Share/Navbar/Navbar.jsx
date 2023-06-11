@@ -5,18 +5,16 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
-    const handleLogOut = () => {
-        logOut()
-            .then(() => { })
-            .catch(error => console.log(error))
-    }
+
     const navItem = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/classes">Classes</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
-        <li><Link to="/dashboard">Dash Board</Link></li>
+        {
+            user?.email ? < li > <Link to="/dashboard">Dash Board</Link></li> : <></>
+        }
     </>
     return (
         <div>
@@ -44,18 +42,10 @@ const Navbar = () => {
                     {
                         user ? <><img className='rounded-full' title={user.displayName} style={{ height: '40px' }} src={user?.photoURL} alt="" /></> :
                             <>
-                                <FaUser style={{ height: '40px' }}></FaUser>
+                                <Link to="/login"><button className='btn btn-primary ml-6'>Login</button></Link>
                             </>
                     }
-                    {
-                        user ?
-                            <button onClick={handleLogOut} className='btn btn-primary ml-6'>LogOut</button>
 
-                            :
-                            <Link to="/login"><button className='btn btn-primary ml-6'>Login</button></Link>
-
-
-                    }
 
 
                 </div>
