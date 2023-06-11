@@ -6,7 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import { saveUser } from '../../Hooks/auth.js/auth';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
-
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 
 const Login = () => {
@@ -15,6 +15,13 @@ const Login = () => {
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
+
+    const [passwordEye, setPasswordEye] = useState(false)
+
+    const handlePasswordClick = () => {
+        setPasswordEye(!passwordEye)
+    }
+
 
 
 
@@ -63,11 +70,19 @@ const Login = () => {
                                 </label>
                                 <input type="email" name='email' placeholder="email" className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                <input type={(passwordEye === false) ? 'password' : 'text'} name='password' placeholder="password" className="input input-bordered" />
+                                <div className='text-2xl absolute top-12 right-5'>
+                                    {
+                                        (passwordEye === false) ? <AiFillEyeInvisible onClick={handlePasswordClick} /> : <AiFillEye onClick={handlePasswordClick} />
+                                    }
+
+
+
+                                </div>
                             </div>
                             <div className="form-control mt-6">
                                 {/* <button >Login</button> */}

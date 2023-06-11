@@ -11,7 +11,7 @@ const ClassInfo = ({ item }) => {
     const handleAddClass = item => {
         if (user && user?.email) {
             const bookingClass = { classId: _id, name, image, email: user?.email, price }
-            fetch('http://localhost:5000/classes', {
+            fetch(' https://summer-camp-server-delta.vercel.app/classes', {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json"

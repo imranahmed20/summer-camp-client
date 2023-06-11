@@ -7,15 +7,35 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { saveUser } from '../../Hooks/auth.js/auth';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
-// import { AiFillEyeInvisible, AiFillEye } from 'react-icons';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 
 const Register = () => {
-    const { register, handleSubmit, reset, watch, formState: { errors }, getValues } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors }, getValues } = useForm({
+        mode: 'onTouched'
+    });
     const { createUser, updateUserProfile } = useContext(AuthContext)
 
-
     const navigate = useNavigate()
+
+    // PASSWORD
+    const [passwordEye, setPasswordEye] = useState(false)
+
+    const handlePasswordClick = () => {
+        setPasswordEye(!passwordEye)
+    }
+    // CONFIRM PASSWORD
+    const [confirmPasswordEye, setConfirmPasswordEye] = useState(false)
+
+    const handleConfirmPasswordClick = () => {
+        setConfirmPasswordEye(!confirmPasswordEye)
+    }
+
+    // check password
+    const password = watch('password')
+
+
+
 
     const onSubmit = data => {
 
@@ -78,29 +98,46 @@ const Register = () => {
                                 <input type="text" {...register("photo", { required: true })} placeholder="PhotoUrl" className="input input-bordered" />
                                 {errors.photo && <span className='text-red-600'>PhotoUrl field is required</span>}
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" {...register("password", {
+                                <input type={(passwordEye === false) ? 'password' : 'text'} {...register("password", {
                                     required: true, minLength: 6,
                                     pattern: /(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/
                                 })} placeholder="password" className="input input-bordered" />
                                 {errors.password?.type === 'required' && <span className='text-red-600'>Password field is required</span>}
                                 {errors.password?.type === 'minLength' && <span className='text-red-600'>Password must be 6 characters</span>}
                                 {errors.password?.type === 'pattern' && <span className='text-red-600'>Password must have one uppercase , one lower case, one special characters</span>}
-                                <div className='text-2xl'>
-                                    {/* <AiFillEyeInvisible />
-                                    <AiFillEye></AiFillEye> */}
-
+                                <div className='text-2xl absolute top-12 right-5'>
+                                    {
+                                        (passwordEye === false) ? <AiFillEyeInvisible onClick={handlePasswordClick} /> : <AiFillEye onClick={handlePasswordClick} />
+                                    }
                                 </div>
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" placeholder="Confirm Password" className="input input-bordered" />
-                                {errors.confirm && <span className='text-red-600'>Confirm Password field is required</span>}
+                                <input type={(confirmPasswordEye === false) ? 'password' : 'text'} placeholder="ConfirmPassword"
+                                    onPaste={(e) => {
+                                        e.preventDefault()
+                                        return false;
+                                    }}
+                                    {...register("confirmPassword", {
+                                        required: true,
+                                        validate: (value) =>
+                                            value === password || "The password did not match",
+                                    })} className="input input-bordered" />
+                                {errors.confirmPassword && <span className='text-red-600'>{errors.confirmPassword.message}</span>}
+                                <div className='text-2xl absolute top-12 right-5'>
+                                    {
+                                        (confirmPasswordEye === false) ? <AiFillEyeInvisible onClick={handleConfirmPasswordClick} /> : <AiFillEye onClick={handleConfirmPasswordClick} />
+                                    }
+
+
+
+                                </div>
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Register" />

@@ -61,8 +61,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/class/:id',
-        element: <InstructorDetails></InstructorDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/class/${params.id}`)
+        element: <InstructorDetails></InstructorDetails>
+        // loader: ({ params }) => fetch(` https://summer-camp-server-delta.vercel.app/class/${params.id}`)
       }
     ]
   },

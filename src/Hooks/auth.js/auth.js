@@ -4,10 +4,11 @@ export const saveUser = user => {
     const currentUser = {
         email: user.email,
         name: user.displayName,
-        photo: user.photoURL
+        photo: user.photoURL,
+        role: 'student'
 
     }
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(` https://summer-camp-server-delta.vercel.app/users/${user?.email}`, {
         method: "PUT",
         headers: {
             'content-type': 'application/json'

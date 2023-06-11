@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch(' https://summer-camp-server-delta.vercel.app/class')
             .then(res => res.json())
             .then(data => {
                 setInstructors(data)

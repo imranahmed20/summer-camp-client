@@ -1,6 +1,7 @@
 import React from 'react';
 import useBooking from '../../Hooks/useBooking/useBooking';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyClass = () => {
     const [booking, refetch] = useBooking()
@@ -19,7 +20,7 @@ const MyClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/${book._id}`, {
+                fetch(` https://summer-camp-server-delta.vercel.app/classes/${book._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -38,9 +39,11 @@ const MyClass = () => {
     }
     return (
         <div>
-            <Helmet>
+            <Helmet
+            >
                 <title>Sports Academies | My Class</title>
             </Helmet>
+
             <div className='mt-20 w-full'>
                 <div className='uppercase flex justify-evenly'>
                     <h2 className='text-3xl font-bold'>Total Added: {booking.length}</h2>

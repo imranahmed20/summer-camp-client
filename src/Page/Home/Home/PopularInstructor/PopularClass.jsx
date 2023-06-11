@@ -4,7 +4,7 @@ import StudentClass from '../../class/StudentClass';
 const PopularClass = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('https://summer-camp-server-delta.vercel.app/instructor')
             .then(res => res.json())
             .then(data => {
                 const footballs = data.filter(data => data.category === "cricket")
