@@ -3,7 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider"
 import useAxiosSecure from "../useAxiosSecure/useAxiosSecure"
 import { useQuery } from "@tanstack/react-query"
 
-const useAdmin = () => {
+const useInstructors = () => {
     const { user } = useContext(AuthContext)
     const [axiosSecure] = useAxiosSecure()
     const { data: isInstructor, isLoading: isInstructorLoading } = useQuery({
@@ -16,4 +16,4 @@ const useAdmin = () => {
     return [isInstructor, isInstructorLoading]
 }
 
-export default useAdmin;
+export default useInstructors;

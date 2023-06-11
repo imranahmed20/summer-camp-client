@@ -72,11 +72,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'allUsers',
-        element: <AdminRoute><AllUser></AllUser></AdminRoute>
+        element: <AllUser></AllUser>
       },
       {
         path: 'manageClass',
-        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+        element: <ManageClasses></ManageClasses>
       }
     ]
   }

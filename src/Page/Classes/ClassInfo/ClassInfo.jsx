@@ -31,7 +31,7 @@ const ClassInfo = ({ item }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
-                       
+
 
                     }
                 })

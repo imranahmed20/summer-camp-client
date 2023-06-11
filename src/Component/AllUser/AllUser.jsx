@@ -23,7 +23,7 @@ const AllUser = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${user.name} is an admin now`,
+                        title: `${user?.name} is an admin now`,
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -44,7 +44,7 @@ const AllUser = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${user.name} is an instructor now`,
+                        title: `${user?.name} is an instructor now`,
                         showConfirmButton: false,
                         timer: 1500
                     })
