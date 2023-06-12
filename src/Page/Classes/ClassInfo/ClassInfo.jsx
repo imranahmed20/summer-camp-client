@@ -2,19 +2,21 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useBooking from '../../../Hooks/useBooking/useBooking';
 
 const ClassInfo = ({ item }) => {
     const { user } = useContext(AuthContext)
     const { _id, name, image, price, availableSeats, instructor } = item;
     const navigate = useNavigate()
+    const [, refetch] = useBooking()
 
     const handleAddClass = item => {
         if (user && user?.email) {
             const bookingClass = { classId: _id, name, image, email: user?.email, price }
-            fetch(' https://summer-camp-server-delta.vercel.app/classes', {
+            fetch('https://summer-camp-server-delta.vercel.app/classes', {
                 method: 'POST',
                 headers: {
-                    "content-type": "application/json"
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify(bookingClass)
 
@@ -23,7 +25,7 @@ const ClassInfo = ({ item }) => {
                 .then(data => {
                     console.log(data)
                     if (data.insertedId) {
-
+                        refetch()
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',

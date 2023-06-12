@@ -56,7 +56,7 @@ const DashBoard = () => {
                                             <>
                                                 <li className='font-bold'> <Link to='/'> <FaHome></FaHome>Instructor Home</Link></li>
                                                 <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/addClass'>Add a Class</Link></li>
-                                                <li className='font-bold'><Link to='/dashboard/manage'>My Classes</Link></li>
+                                                <li className='font-bold'><Link to='/dashboard/enrollClass'>My Classes</Link></li>
                                                 <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
 
 
@@ -75,6 +75,10 @@ const DashBoard = () => {
                                                         </>
                                                         :
                                                         <>
+                                                            <li className='font-bold'> <Link to='/'> <FaHome></FaHome> Student Home</Link></li>
+                                                            <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/myClass'>My Selected Classes</Link></li>
+                                                            <li className='font-bold'><Link to='/dashboard/enrollClass'>My Enrolled Classes</Link></li>
+                                                            <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
 
 
 

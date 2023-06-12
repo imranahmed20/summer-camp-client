@@ -18,7 +18,7 @@ const MyClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(` https://summer-camp-server-delta.vercel.app/classes/${book._id}`, {
+                fetch(`https://summer-camp-server-delta.vercel.app/classes/${book._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -36,13 +36,13 @@ const MyClass = () => {
         })
     }
     return (
-        <div>
+        <div className='w-full'>
             <Helmet
             >
                 <title>Sports Academies | My Class</title>
             </Helmet>
 
-            <div className='mt-20 w-full'>
+            <div className='mt-20'>
                 <div className='uppercase flex justify-evenly'>
                     <h2 className='text-3xl font-bold'>Total Added: {booking.length}</h2>
                     <h2 className='text-3xl font-bold'>Total Price: ${total}</h2>
