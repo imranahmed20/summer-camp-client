@@ -1,5 +1,5 @@
 import React from 'react';
-import footerLogo from '../../../src/assets/logo.avif'
+import footerLogo from '../../../src/assets/sport.avif'
 
 const Footer = () => {
     return (

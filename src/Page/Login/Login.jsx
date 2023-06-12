@@ -13,6 +13,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    const [error, setError] = useState('')
 
     const from = location.state?.from?.pathname || '/';
 
@@ -45,7 +46,7 @@ const Login = () => {
                 })
 
             })
-            .catch(error => console.log(error))
+            .catch(error => setError(error))
 
     }
 
@@ -67,13 +68,14 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={(passwordEye === false) ? 'password' : 'text'} name='password' placeholder="password" className="input input-bordered" />
+                                <input type={(passwordEye === false) ? 'password' : 'text'} name='password' placeholder="password" className="input input-bordered" required />
+                                <p className='text-red-500 mt-4'> {error.message}</p>
                                 <div className='text-2xl absolute top-12 right-5'>
                                     {
                                         (passwordEye === false) ? <AiFillEyeInvisible onClick={handlePasswordClick} /> : <AiFillEye onClick={handlePasswordClick} />
