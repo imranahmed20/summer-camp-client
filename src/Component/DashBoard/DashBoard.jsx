@@ -4,6 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../../Hooks/useAdmin/useAdmin';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet';
+// import useStudent from '../../Hooks/useStudent/useStudent';
 
 // import useInstructors from '../../Hooks/useInstructor/useInstructors';
 
@@ -15,8 +16,9 @@ const DashBoard = () => {
             .then(() => { })
             .catch(error => console.log(error))
     }
-
     const [adminRole] = useAdmin()
+    // const [studentRole] = useStudent()
+
     return (
         <div>
             <Helmet>
@@ -39,7 +41,7 @@ const DashBoard = () => {
                             adminRole === 'admin' ?
 
                                 <>
-                                    <li className='font-bold'> <Link to='/'><FaHome></FaHome>Home</Link></li>
+                                    <li className='font-bold'> <Link to='/'><FaHome></FaHome>Admin Home</Link></li>
                                     <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/allUsers'>Manage Users</Link></li>
                                     <li className='font-bold'><Link to='/dashboard/manageClass'>Manage Classes</Link></li>
                                     <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex  items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
@@ -52,7 +54,7 @@ const DashBoard = () => {
                                         adminRole === 'instructor' ?
 
                                             <>
-                                                <li className='font-bold'> <Link to='/'> <FaHome></FaHome>Home</Link></li>
+                                                <li className='font-bold'> <Link to='/'> <FaHome></FaHome>Instructor Home</Link></li>
                                                 <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/addClass'>Add a Class</Link></li>
                                                 <li className='font-bold'><Link to='/dashboard/manage'>My Classes</Link></li>
                                                 <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
@@ -65,13 +67,19 @@ const DashBoard = () => {
                                                 {
                                                     adminRole === 'student' ?
                                                         <>
-                                                            <li className='font-bold'> <Link to='/'> <FaHome></FaHome> Student</Link></li>
-                                                            <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/myclass'>My Selected Classes</Link></li>
+                                                            <li className='font-bold'> <Link to='/'> <FaHome></FaHome> Student Home</Link></li>
+                                                            <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/myClass'>My Selected Classes</Link></li>
                                                             <li className='font-bold'><Link to='/dashboard/enrollClass'>My Enrolled Classes</Link></li>
                                                             <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
+
                                                         </>
                                                         :
-                                                        <></>
+                                                        <>
+
+
+
+
+                                                        </>
                                                 }
 
 

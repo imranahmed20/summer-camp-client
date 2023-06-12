@@ -95,16 +95,16 @@ const AllUser = () => {
                                             <button className="btn btn-secondary btn-xs " disabled>Make Admin</button>
 
                                             :
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-xs ">Make Admin</button>
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-xs">Make Admin</button>
                                     }
                                 </td>
                                 <td>
                                     {
                                         user.role === 'instructor' ?
                                             <>
-                                                <button className="btn btn-primary btn-sm" disabled>Make Instructor</button>
+                                                <button className="btn btn-primary btn-xs " disabled>Make Instructor</button>
                                             </> :
-                                            <> <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-sm">Make Instructor</button>
+                                            <> <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-xs">Make Instructor</button>
                                             </>
                                     }
                                 </td>

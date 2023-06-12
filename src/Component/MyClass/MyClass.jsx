@@ -5,9 +5,7 @@ import { Helmet } from 'react-helmet';
 
 const MyClass = () => {
     const [booking, refetch] = useBooking()
-    console.log(booking)
     const total = booking.reduce((sum, book) => book.price + sum, 0)
-
 
     const handleDelete = book => {
         Swal.fire({

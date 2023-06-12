@@ -17,7 +17,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
-
+                saveUser(result.user)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',

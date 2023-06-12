@@ -5,14 +5,19 @@ import useAxiosSecure from '../useAxiosSecure/useAxiosSecure';
 
 const useBooking = () => {
     const { user } = useContext(AuthContext)
-    const [axiosSecure] = useAxiosSecure()
+
     const token = localStorage.getItem('access-token')
 
-    const { refetch, data: booking = [] } = useQuery({
+    const { data: booking = [], refetch } = useQuery({
         queryKey: ['booking', user?.email],
+        // enabled: !loading,
         queryFn: async () => {
-            const response = await axiosSecure(`/classes?email=${user?.email}`)
-            return response.data;
+            const response = await fetch(`https://summer-camp-server-delta.vercel.app/classes?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${token}`
+                }
+            })
+            return response.json();
         }
 
 
