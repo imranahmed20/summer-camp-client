@@ -2,10 +2,12 @@ import React from 'react';
 import useBooking from '../../Hooks/useBooking/useBooking';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyClass = () => {
     const [booking, refetch] = useBooking()
     const total = booking.reduce((sum, book) => book.price + sum, 0)
+    const navigate = useNavigate()
 
     const handleDelete = book => {
         Swal.fire({
@@ -34,6 +36,10 @@ const MyClass = () => {
                     })
             }
         })
+    }
+
+    const handlePay = () => {
+        navigate('/dashboard/payment')
     }
     return (
         <div className='w-full'>
@@ -76,7 +82,7 @@ const MyClass = () => {
                                         {book.name}
                                     </td>
                                     <td>
-                                        <button className="btn btn-accent btn-sm">Pay</button>
+                                        <button onClick={handlePay} className="btn btn-accent btn-sm">Pay</button>
                                     </td>
                                     <td>
                                         <button onClick={() => handleDelete(book)} className="btn btn-secondary btn-sm">Delete</button>

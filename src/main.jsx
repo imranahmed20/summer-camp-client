@@ -29,6 +29,7 @@ import AdminRoute from './Route/AminRoute';
 import InstructorDetails from './Page/Instructors/InstructorDetail/InstructorDetails';
 import MyEnrollClass from './Component/MyEnrolClass/MyEnrollClass';
 import Manage from './Component/ManageClass/Manage';
+import Payment from './Component/Payment/Payment';
 
 const queryClient = new QueryClient()
 
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: 'manage',
         element: <Manage></Manage>
+      },
+      {
+        path: 'payment',
+        element: <Payment></Payment>
       }
     ]
   }

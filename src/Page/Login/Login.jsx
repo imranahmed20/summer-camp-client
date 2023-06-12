@@ -10,6 +10,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 
 const Login = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { signIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -23,16 +24,8 @@ const Login = () => {
         setPasswordEye(!passwordEye)
     }
 
-
-
-
-    const handleLogin = (event) => {
-        event.preventDefault()
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password)
-        signIn(email, password)
+    const onSubmit = data => {
+        signIn(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
@@ -47,8 +40,31 @@ const Login = () => {
 
             })
             .catch(error => setError(error))
+    };
 
-    }
+    // const handleLogin = (event) => {
+    //     event.preventDefault()
+    //     const form = event.target;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+    //     console.log(email, password)
+    //     signIn(email, password)
+    //         .then(result => {
+    //             const loggedUser = result.user;
+    //             console.log(loggedUser)
+    //             navigate(from, { replace: true })
+    //             Swal.fire({
+    //                 position: 'top-end',
+    //                 icon: 'success',
+    //                 title: 'User Login Successful',
+    //                 showConfirmButton: false,
+    //                 timer: 1500
+    //             })
+
+    //         })
+    //         .catch(error => setError(error))
+
+    // }
 
 
     return (
@@ -62,19 +78,19 @@ const Login = () => {
                         <img className='rounded-lg mt-16' src={loginImage} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-20">
-                        <form onSubmit={handleLogin} className="card-body">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <h1 className='text-center text-4xl  text-red-600 font-bold'>Login</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={(passwordEye === false) ? 'password' : 'text'} name='password' placeholder="password" className="input input-bordered" required />
+                                <input type={(passwordEye === false) ? 'password' : 'text'}  {...register("password", { required: true })} placeholder="password" className="input input-bordered" required />
                                 <p className='text-red-500 mt-4'> {error.message}</p>
                                 <div className='text-2xl absolute top-12 right-5'>
                                     {

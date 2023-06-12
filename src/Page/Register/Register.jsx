@@ -15,7 +15,6 @@ const Register = () => {
         mode: 'onTouched'
     });
     const { createUser, updateUserProfile } = useContext(AuthContext)
-
     const navigate = useNavigate()
 
     // PASSWORD
@@ -33,9 +32,6 @@ const Register = () => {
 
     // check password
     const password = watch('password')
-
-
-
 
     const onSubmit = data => {
 
