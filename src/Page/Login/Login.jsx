@@ -35,7 +35,6 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                saveUser(result.user)
                 navigate(from, { replace: true })
                 Swal.fire({
                     position: 'top-end',

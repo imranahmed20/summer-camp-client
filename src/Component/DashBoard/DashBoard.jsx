@@ -63,7 +63,7 @@ const DashBoard = () => {
                                             :
                                             <>
                                                 {
-                                                    adminRole === undefined ?
+                                                    adminRole === 'student' ?
                                                         <>
                                                             <li className='font-bold'> <Link to='/'> <FaHome></FaHome> Student</Link></li>
                                                             <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/myclass'>My Selected Classes</Link></li>

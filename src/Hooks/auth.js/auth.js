@@ -5,7 +5,7 @@ export const saveUser = user => {
         email: user.email,
         name: user.displayName,
         photo: user.photoURL,
-        role: 'student'
+        role: user?.role ? user?.role : 'student'
 
     }
     fetch(` https://summer-camp-server-delta.vercel.app/users/${user?.email}`, {

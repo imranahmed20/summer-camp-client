@@ -68,6 +68,7 @@ const AllUser = () => {
                             <th>User Image</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th>Admin</th>
                             <th>Instructor</th>
                         </tr>
@@ -85,15 +86,16 @@ const AllUser = () => {
                                 </td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+                                <td>{user.role}</td>
 
 
                                 <td>
                                     {
                                         user.role === "admin" ?
-                                            <button className="btn btn-secondary btn-sm " disabled>Make Admin</button>
+                                            <button className="btn btn-secondary btn-xs " disabled>Make Admin</button>
 
                                             :
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-sm ">Make Admin</button>
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-xs ">Make Admin</button>
                                     }
                                 </td>
                                 <td>
