@@ -10,14 +10,12 @@ const AllUser = () => {
     })
 
     const handleMakeAdmin = user => {
-        console.log(user)
         fetch(` https://summer-camp-server-delta.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
 
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount) {
                     refetch()
                     Swal.fire({
@@ -38,7 +36,6 @@ const AllUser = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount) {
                     refetch()
                     Swal.fire({
@@ -92,19 +89,19 @@ const AllUser = () => {
                                 <td>
                                     {
                                         user.role === "admin" ?
-                                            <button className="btn btn-secondary btn-xs " disabled>Make Admin</button>
+                                            <button className="btn btn-secondary btn-xs " disabled> Admin</button>
 
                                             :
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-xs">Make Admin</button>
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-secondary btn-xs"> Admin</button>
                                     }
                                 </td>
                                 <td>
                                     {
                                         user.role === 'instructor' ?
                                             <>
-                                                <button className="btn btn-primary btn-xs " disabled>Make Instructor</button>
+                                                <button className="btn btn-primary btn-xs " disabled> Instructor</button>
                                             </> :
-                                            <> <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-xs">Make Instructor</button>
+                                            <> <button onClick={() => handleMakeInstructor(user)} className="btn btn-primary btn-xs"> Instructor</button>
                                             </>
                                     }
                                 </td>

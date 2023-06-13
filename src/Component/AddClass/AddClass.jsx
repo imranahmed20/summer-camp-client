@@ -26,14 +26,10 @@ const AddClass = () => {
                     const imageURL = imgResponse.data.display_url;
                     const { name, price, email, category, instructor, availableSeats } = data;
                     const newClass = { name, email, price: parseFloat(price), category, availableSeats, instructor, image: imageURL }
-                    console.log(newClass)
                     axiosSecure.post('/instructor', newClass)
                         .then(data => {
-
                             alert('Add Succesfull')
                             console.log(data)
-
-
                         })
                 }
             })

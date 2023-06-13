@@ -10,7 +10,6 @@ const PopularClass = () => {
             .then(data => {
                 const footballs = data.filter(data => data.category === "cricket")
                 setClasses(footballs)
-                console.log(footballs)
 
             })
     }, [])

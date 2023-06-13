@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 
 const ManageClasses = () => {
     const [items] = useData()
-    console.log(items)
     return (
         <>
             <Helmet>
