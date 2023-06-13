@@ -27,9 +27,13 @@ live site link: https://summer-camp-client-e60d7.web.app
 
 [Documentation](https://linktodocumentation)
 
-Toast : weet Toast
+t : sweet alart
 
-framwork: react-bootstrap
+framwork: tailwind css
+
+image: font awesome
+
+
 ## Deployment
 
 To deploy this project run
