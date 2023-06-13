@@ -5,7 +5,7 @@ import useInstructor from '../../../../Hooks/useInstructor';
 const PopularInstructor = () => {
     const [instructor, setInstructors] = useState([])
     useEffect(() => {
-        fetch(' https://summer-camp-server-delta.vercel.app/class')
+        fetch(' https://summer-camp-server-delta.vercel.app/Instructor')
             .then(res => res.json())
             .then(data => {
                 const footballs = data.filter(data => data.category === "footboll")

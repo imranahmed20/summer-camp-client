@@ -1,11 +1,12 @@
 import React from 'react';
-import useData from '../../Hooks/data/useData';
 import { Helmet } from 'react-helmet';
 import Enroll from './Enroll';
-import useCreate from '../../Hooks/create';
+import useAddClass from '../../Hooks/useAddClass/useAddClass';
+
+
 
 const MyEnrollClass = () => {
-    const [items] = useCreate()
+    const [items] = useAddClass()
     return (
         <>
             <Helmet>
@@ -13,7 +14,7 @@ const MyEnrollClass = () => {
             </Helmet>
             <div className='mt-10'>
 
-                <h1 className='text-3xl text-center font-bold'>My Class</h1>
+                <h1 className='text-3xl text-center font-bold'>My All Class </h1>
                 <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-6 mt-10 mb-8'>
                     {
                         items.map(item => <Enroll item={item} key={item._id}></Enroll>)

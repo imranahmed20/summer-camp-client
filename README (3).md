@@ -27,11 +27,15 @@ live site link: https://summer-camp-client-e60d7.web.app
 
 [Documentation](https://linktodocumentation)
 
-t : sweet alart
+Toast : sweet alart
 
-framwork: tailwind css
+Frame work: tailwind css and daisyui
 
 image: font awesome
+
+Form: react hook form
+
+Query: TanStack Query 
 
 
 ## Deployment
@@ -56,15 +60,7 @@ Install my-project with npm
   cd my-project
 ```
     
-## Usage/Examples
 
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
 
 
 ## Environment Variables

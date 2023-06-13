@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const useData = () => {
+const useAddClass = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetch('https://summer-camp-server-delta.vercel.app/class')
+        fetch('https://summer-camp-server-delta.vercel.app/instructor')
             .then(res => res.json())
             .then(data => {
                 setItems(data)
@@ -14,4 +14,4 @@ const useData = () => {
     return [items, loading]
 };
 
-export default useData;
+export default useAddClass;

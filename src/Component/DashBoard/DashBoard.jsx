@@ -13,7 +13,7 @@ const DashBoard = () => {
             .catch(error => console.log(error))
     }
     const [adminRole] = useAdmin()
-   
+
 
     return (
         <div>
@@ -65,7 +65,7 @@ const DashBoard = () => {
                                                         <>
                                                             <li className='font-bold'> <Link to='/'> <FaHome></FaHome> Student Home</Link></li>
                                                             <li className='font-bold'><Link className='mb-5 mt-5' to='/dashboard/myClass'>My Selected Classes</Link></li>
-                                                            <li className='font-bold'><Link to='/dashboard/enrollClass'>My Enrolled Classes</Link></li>
+                                                            <li className='font-bold'><Link >My Enrolled Classes</Link></li>
                                                             <li className='font-bold mt-5'><button onClick={handleLogOut} className='font-bold flex items-center'> <FaSignOutAlt></FaSignOutAlt>LogOut</button></li>
 
                                                         </>

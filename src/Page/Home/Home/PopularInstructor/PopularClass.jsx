@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const PopularClass = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('https://summer-camp-server-delta.vercel.app/instructor')
+        fetch('https://summer-camp-server-delta.vercel.app/class')
             .then(res => res.json())
             .then(data => {
                 const footballs = data.filter(data => data.category === "cricket")
