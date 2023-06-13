@@ -13,9 +13,8 @@ const Instructor = ({ item }) => {
                 transition={{ ease: "easeOut", duration: 2 }} className="card-body">
                 <h2 className="card-title">Instructor Name: {name}</h2>
                 <h2 className="card-title">Email: {email}</h2>
-                <h2 className="card-title">Available Seats: {numberOfClass}</h2>
                 <div className="card-actions justify-end">
-                    <Link to={`/class/${_id}`} className='w-full' > <button className="btn btn-primary w-full mt-5">See classes</button></Link>
+                    <Link className='w-full' > <button className="btn btn-primary w-full mt-5">See classes</button></Link>
                 </div>
             </motion.div>
         </div >

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useAxiosSecure from '../../Hooks/useAxiosSecure/useAxiosSecure';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 const img_token = import.meta.env.VITE_IMGBB_KEY;
 
@@ -23,12 +24,16 @@ const AddClass = () => {
             .then(imgResponse => {
                 if (imgResponse.success) {
                     const imageURL = imgResponse.data.display_url;
-                    const { name, price, category, instructor, availableSeats } = data;
-                    const newClass = { name, price: parseFloat(price), category, availableSeats, instructor, image: imageURL }
+                    const { name, price, email, category, instructor, availableSeats } = data;
+                    const newClass = { name, email, price: parseFloat(price), category, availableSeats, instructor, image: imageURL }
                     console.log(newClass)
-                    axiosSecure.post('/addClass', newClass)
+                    axiosSecure.post('/instructor', newClass)
                         .then(data => {
-                            console.log("see data", data)
+
+                            alert('Add Succesfull')
+                            console.log(data)
+
+
                         })
                 }
             })
@@ -83,7 +88,7 @@ const AddClass = () => {
                             <label className="label">
                                 <span className="label-text">Available seats*</span>
                             </label>
-                            <input {...register("availableSeats", { required: true })} type="number" placeholder="Available seats" className="input input-bordered w-full max-w-xs" />
+                            <input {...register("availableSeats", { required: true })} type="text" placeholder="Available seats" className="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
                     <div className="form-control">

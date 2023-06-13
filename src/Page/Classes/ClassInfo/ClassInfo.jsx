@@ -3,12 +3,14 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import useBooking from '../../../Hooks/useBooking/useBooking';
+import useAdmin from '../../../Hooks/useAdmin/useAdmin';
 
 const ClassInfo = ({ item }) => {
     const { user } = useContext(AuthContext)
     const { _id, name, image, price, availableSeats, instructor } = item;
     const navigate = useNavigate()
     const [, refetch] = useBooking()
+    const [adminRole] = useAdmin()
 
     const handleAddClass = item => {
         if (user && user?.email) {
@@ -63,7 +65,10 @@ const ClassInfo = ({ item }) => {
                 <h2 className="card-title">Price: ${price}</h2>
                 <h2 className="card-title">Available Seats: {availableSeats}</h2>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleAddClass(item)} className="btn btn-primary w-full mt-5">Select Class</button>
+                    {
+
+                        adminRole === 'student' ? <button onClick={() => handleAddClass(item)} className="btn btn-primary w-full mt-5">Select Class</button> : <button className="btn btn-primary w-full mt-5" disabled>Select Class</button>
+                    }
                 </div>
             </div>
         </div>

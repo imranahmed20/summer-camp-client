@@ -2,9 +2,10 @@ import React from 'react';
 import useData from '../../Hooks/data/useData';
 import { Helmet } from 'react-helmet';
 import Enroll from './Enroll';
+import useCreate from '../../Hooks/create';
 
 const MyEnrollClass = () => {
-    const [items] = useData()
+    const [items] = useCreate()
     return (
         <>
             <Helmet>

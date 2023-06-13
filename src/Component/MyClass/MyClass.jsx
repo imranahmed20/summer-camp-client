@@ -38,9 +38,7 @@ const MyClass = () => {
         })
     }
 
-    const handlePay = () => {
-        navigate('/dashboard/payment')
-    }
+
     return (
         <div className='w-full'>
             <Helmet
@@ -82,7 +80,8 @@ const MyClass = () => {
                                         {book.name}
                                     </td>
                                     <td>
-                                        <button onClick={handlePay} className="btn btn-accent btn-sm">Pay</button>
+                                        <Link to='/dashboard/payment'> <button className="btn btn-accent btn-sm">Pay</button></Link>
+
                                     </td>
                                     <td>
                                         <button onClick={() => handleDelete(book)} className="btn btn-secondary btn-sm">Delete</button>

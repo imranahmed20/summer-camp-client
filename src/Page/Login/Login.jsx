@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { saveUser } from '../../Hooks/auth.js/auth';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { useForm } from 'react-hook-form';
 
 
 const Login = () => {
@@ -41,30 +42,6 @@ const Login = () => {
             })
             .catch(error => setError(error))
     };
-
-    // const handleLogin = (event) => {
-    //     event.preventDefault()
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(email, password)
-    //     signIn(email, password)
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser)
-    //             navigate(from, { replace: true })
-    //             Swal.fire({
-    //                 position: 'top-end',
-    //                 icon: 'success',
-    //                 title: 'User Login Successful',
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //             })
-
-    //         })
-    //         .catch(error => setError(error))
-
-    // }
 
 
     return (

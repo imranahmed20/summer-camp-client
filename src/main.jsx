@@ -26,7 +26,6 @@ import MyClass from './Component/MyClass/MyClass';
 import AllUser from './Component/AllUser/AllUser';
 import ManageClasses from './Component/ManageClass/ManageClasses';
 import AdminRoute from './Route/AminRoute';
-import InstructorDetails from './Page/Instructors/InstructorDetail/InstructorDetails';
 import MyEnrollClass from './Component/MyEnrolClass/MyEnrollClass';
 import Manage from './Component/ManageClass/Manage';
 import Payment from './Component/Payment/Payment';
@@ -60,11 +59,7 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
-      {
-        path: '/class/:id',
-        element: <InstructorDetails></InstructorDetails>
-        // loader: ({ params }) => fetch(` https://summer-camp-server-delta.vercel.app/class/${params.id}`)
-      }
+
     ]
   },
   {

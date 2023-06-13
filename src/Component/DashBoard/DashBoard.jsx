@@ -4,10 +4,6 @@ import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../../Hooks/useAdmin/useAdmin';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Helmet } from 'react-helmet';
-// import useStudent from '../../Hooks/useStudent/useStudent';
-
-// import useInstructors from '../../Hooks/useInstructor/useInstructors';
-
 
 const DashBoard = () => {
     const { logOut } = useContext(AuthContext)
@@ -17,7 +13,7 @@ const DashBoard = () => {
             .catch(error => console.log(error))
     }
     const [adminRole] = useAdmin()
-    // const [studentRole] = useStudent()
+   
 
     return (
         <div>

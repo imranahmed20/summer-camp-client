@@ -9,7 +9,6 @@ const Enroll = ({ item }) => {
                 <h2 className="card-title">Instructor Name: {instructor}</h2>
                 <h2 className="card-title">Class Name: {name}</h2>
                 <h2 className="card-title">Price: ${price}</h2>
-                <h2 className="card-title">Available Seats: {availableSeats}</h2>
                 <div className="flex justify-between">
                     <button className="btn btn-outline btn-primary mt-5">Pending</button>
                     <button className="btn btn-outline btn-accent mt-5">Approved</button>
